@@ -9,11 +9,10 @@ import Foundation
 import SwiftUI
 import CoreLocation
 
-struct CardView: View {
+struct LocationView: View {
     var image: String
     var title: String
     var location: CLLocation
-    
     
     var body: some View {
         VStack {
@@ -75,5 +74,5 @@ struct CustomImage: View {
 
 #Preview {
     // Breckinridge CO lat and long
-    CardView(image: "twins", title: "Breckenridge, CO", location: CLLocation(latitude: 39.4817, longitude: -106.0384))
+    LocationView(image: "twins", title: "Breckenridge, CO", location: CLLocation(latitude: 39.4817, longitude: -106.0384))
 }
