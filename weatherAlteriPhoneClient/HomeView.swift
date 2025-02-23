@@ -30,10 +30,11 @@ struct HomeView: View {
                 .disableAutocorrection(true)
                 .border(.secondary)
             
+            // TODO: Make this real
             CordinatesView(title: "Breckenridge, CO", location: CLLocation(latitude: 39.4817, longitude: -106.0384))
                 .padding()
         }.frame(height: 100)
-//            .background(Color.black.opacity(0.5))
+        
         // scroller view to decide what to do
         ScrollView {
             VStack(alignment: .leading) {

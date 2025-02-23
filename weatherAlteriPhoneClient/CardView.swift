@@ -43,7 +43,7 @@ struct CordinatesView: View {
         VStack {
             HStack {
                 // This is the name of the location
-                Text(title).padding().fontWeight(.bold).font(Font.title2)
+                Text(title).padding().fontWeight(.bold).font(Font.title3)
                 Spacer()
                 VStack {
                     HStack {
@@ -69,9 +69,12 @@ struct NavigationCard: View, CardView {
     var title: String
     var description: String
     
+    private let cornerRadius: CGFloat = 100
+    
     var body: some View {
-        ZStack(alignment: .bottom){
+        ZStack(alignment: .center){
             Image(image).resizable().aspectRatio(contentMode: .fill)
+                .cornerRadius(self.cornerRadius)
             VStack {
                 // This is the name of the location
                 Text(title).fontWeight(.bold).font(Font.title2).foregroundColor(.white)
@@ -80,9 +83,10 @@ struct NavigationCard: View, CardView {
                 .frame(height: 100)
                 .background(Color.black.opacity(0.5)) // Semi-transparent background for
         }
-        .shadow(radius: 10)
+      
         .padding()
-        .cornerRadius(50)
+//        .cornerRadius(cornerRadius)
+        .shadow(radius: 10)
     }
 }
 
@@ -93,7 +97,9 @@ struct NavigationCard: View, CardView {
 
 #Preview {
     // Breckinridge CO lat and long
-        LocationView(image: "twins", title: "Breckenridge, CO", location: CLLocation(latitude: 39.4817, longitude: -106.0384))
+//        LocationView(image: "twins", title: "Breckenridge, CO", location: CLLocation(latitude: 39.4817, longitude: -106.0384))
+    
+    NavigationCard(image: "twins", title: "Weather", description: "Find weather forcast for your area!")
     
 //    CordinatesView(title: "Breckenridge, CO", location: CLLocation(latitude: 39.4817, longitude: -106.0384))
 }
