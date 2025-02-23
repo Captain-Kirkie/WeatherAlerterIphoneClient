@@ -11,7 +11,9 @@ import SwiftUI
 struct weatherAlteriPhoneClientApp: App {
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            HomeView().background(
+                Image("suffering")
+            )
         }
     }
 }

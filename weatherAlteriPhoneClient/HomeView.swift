@@ -11,8 +11,27 @@ import CoreLocation
 
 struct HomeView: View {
     @State var currentLocation: CLLocation?
+//    @FocusState private var emailFieldIsFocused: Bool = false
+    @State var mountainString: String = ""
     
     var body: some View {
+        // Current location indicator
+        VStack {
+            TextField(
+                    "Find your Mountain",
+                    text: $mountainString
+                )
+//                .focused($emailFieldIsFocused)
+                .onSubmit {
+//                    validate(name: username)
+                    print("hello world \($mountainString)")
+                }
+                .textInputAutocapitalization(.never)
+                .disableAutocorrection(true)
+                .border(.secondary)
+        }
+        
+        
         
         ScrollView {
             VStack(alignment: .leading) {
@@ -34,6 +53,7 @@ struct HomeView: View {
                 NavigationLink(destination: FindARide()) {
                     NavigationCard(image: "newTruck", title: "Carpool", description: "Find fellow shredders to carpool with")
                 }
+                // TODO: Add lodging
                 
             }.toolbar {
                 ToolbarItemGroup(placement: .bottomBar) {
@@ -44,8 +64,6 @@ struct HomeView: View {
                     }
                 }
             }
-            .background(LinearGradient(gradient: Gradient(colors: [Color.red, Color.blue]), startPoint: .topLeading, endPoint: .bottomTrailing)
-            )
         }
     }
 }
