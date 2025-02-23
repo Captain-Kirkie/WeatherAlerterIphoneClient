@@ -59,9 +59,9 @@ struct HomeView: View {
             }.toolbar {
                 ToolbarItemGroup(placement: .bottomBar) {
                     Button {
-                        print("TODO: Do something with this tool bar")
+                        print("TODO: Go to the Profile page.")
                     } label: {
-                        Image(systemName: "pencil")
+                        Image(systemName: "person")
                     }
                 }
             }
