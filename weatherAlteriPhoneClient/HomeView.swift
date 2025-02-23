@@ -17,36 +17,35 @@ struct HomeView: View {
         ScrollView {
             VStack(alignment: .leading) {
                 NavigationLink(destination: WeatherView()) {
-                    CustomImage(imageName: "twins", text: "Weather")
+                    NavigationCard(image: "twins", title: "Weather", description: "Find weather forcast for your area")
                 }
                 NavigationLink(destination: ResortView()) {
-                    CustomImage(imageName: "mineral-basin", text: "Resort")
+                    NavigationCard(image: "mineral-basin", title: "Resort", description: "Get Resort info for your area")
                 }
                 NavigationLink(destination: TrafficView()) {
-                    CustomImage(imageName: "traffic", text: "Traffic")
+                    NavigationCard(image: "traffic", title: "Traffic", description: "Get Traffic Report")
                 }
                 NavigationLink(destination: BackCountryView()) {
-                    CustomImage(imageName: "backcountry", text: "Back Country")
+                    NavigationCard(image: "backcountry", title: "Back Country", description: "Get Back Country forcast for your area")
                 }
                 NavigationLink(destination: FindAFriend()) {
-                    CustomImage(imageName: "Andrew", text: "Find a friend to shred")
+                    NavigationCard(image: "Andrew", title: "Find a friend to shred", description: "Looking for partners? This is the spot!")
                 }
                 NavigationLink(destination: FindARide()) {
-                    CustomImage(imageName: "newTruck", text: "Find a ride")
+                    NavigationCard(image: "newTruck", title: "Carpool", description: "Find fellow shredders to carpool with")
+                }
+                
+            }.toolbar {
+                ToolbarItemGroup(placement: .bottomBar) {
+                    Button {
+                        print("TODO: Do something with this tool bar")
+                    } label: {
+                        Image(systemName: "pencil")
+                    }
                 }
             }
-            
-        }.toolbar {
-            ToolbarItemGroup(placement: .bottomBar) {
-                Button {
-                    print("TODO: Do something with this tool bar")
-                } label: {
-                    Image(systemName: "pencil")
-                }
-            }
+            .background(LinearGradient(gradient: Gradient(colors: [Color.red, Color.blue]), startPoint: .topLeading, endPoint: .bottomTrailing)
+            )
         }
-        .background(LinearGradient(gradient: Gradient(colors: [Color.red, Color.blue]), startPoint: .topLeading, endPoint: .bottomTrailing)
-        )
     }
 }
-

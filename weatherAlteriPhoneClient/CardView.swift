@@ -9,6 +9,13 @@ import Foundation
 import SwiftUI
 import CoreLocation
 
+protocol CardView {
+    var image: String {get set}
+    var title: String {get set}
+    var description: String { get set }
+}
+
+
 struct LocationView: View {
     var image: String
     var title: String
@@ -49,25 +56,30 @@ struct LocationView: View {
 }
 
 
-struct CustomImage: View {
-    var imageName: String
-    var text: String
+struct NavigationCard: View, CardView {
+    var image: String
+    var title: String
+    var description: String
+    
     var body: some View {
-        ZStack {
-            Image(imageName).resizable().aspectRatio(contentMode: .fill)
-            Text(self.text)
-                .font(.headline)
-                .foregroundColor(.white) // Set the text color to contrast with the image
-                .padding()
-                .background(Color.black.opacity(0.7)) // Adjust the opacity as needed
-                .cornerRadius(50) // Adjust the corner radius as needed
-                .frame(alignment: .center)
-        }.fixedSize(horizontal: false, vertical: true)
-            .aspectRatio(CGSize(width: 3, height: 5),contentMode: .fit)
-            .cornerRadius(50)
-            .padding()
+        ZStack(alignment: .bottom){
+            Image(image).resizable().aspectRatio(contentMode: .fill)
+            VStack {
+                // This is the name of the location
+                Text(title).fontWeight(.bold).font(Font.title2).foregroundColor(.white)
+                Text(description).foregroundColor(.white)
+            }.frame(maxWidth: .infinity) // Fill width
+                .frame(height: 100)
+                .background(Color.black.opacity(0.5)) // Semi-transparent background for
+        }
+//        .frame(width: UIScreen.main.bounds.width - 10, height: UIScreen.main.bounds.height / 3)
+        .shadow(radius: 10)
+        .padding()
     }
 }
+
+
+
 
 
 
