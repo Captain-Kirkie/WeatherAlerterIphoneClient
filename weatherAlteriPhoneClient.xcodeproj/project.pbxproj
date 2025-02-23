@@ -11,6 +11,7 @@
 		F43D123C2B14239000D0FDAD /* weatherAlerteriPhoneClientUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43D123B2B14239000D0FDAD /* weatherAlerteriPhoneClientUITestsLaunchTests.swift */; };
 		F4D10B592D6B8816004B7F4B /* Resort.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D10B582D6B8816004B7F4B /* Resort.swift */; };
 		F4D10B5B2D6B885F004B7F4B /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D10B5A2D6B885F004B7F4B /* Location.swift */; };
+		F4D10B5D2D6BB760004B7F4B /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D10B5C2D6BB760004B7F4B /* CardView.swift */; };
 		F4DE38BE2B10FBB80013B594 /* weatherAlteriPhoneClientApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DE38BD2B10FBB80013B594 /* weatherAlteriPhoneClientApp.swift */; };
 		F4DE38C02B10FBB80013B594 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DE38BF2B10FBB80013B594 /* HomeView.swift */; };
 		F4DE38C22B10FBBB0013B594 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4DE38C12B10FBBB0013B594 /* Assets.xcassets */; };
@@ -40,6 +41,7 @@
 		F43D123B2B14239000D0FDAD /* weatherAlerteriPhoneClientUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weatherAlerteriPhoneClientUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F4D10B582D6B8816004B7F4B /* Resort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resort.swift; sourceTree = "<group>"; };
 		F4D10B5A2D6B885F004B7F4B /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		F4D10B5C2D6BB760004B7F4B /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		F4DE38BA2B10FBB80013B594 /* weatherAlteriPhoneClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weatherAlteriPhoneClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4DE38BD2B10FBB80013B594 /* weatherAlteriPhoneClientApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weatherAlteriPhoneClientApp.swift; sourceTree = "<group>"; };
 		F4DE38BF2B10FBB80013B594 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				F4F8B95A2B13C0CB006F1C9A /* BackCountryView.swift */,
 				F4FE91832D66DD850096E7DC /* FindARide.swift */,
 				F4F8B95C2B13C0E5006F1C9A /* ResortView.swift */,
+				F4D10B5C2D6BB760004B7F4B /* CardView.swift */,
 				F4DE38C12B10FBBB0013B594 /* Assets.xcassets */,
 				F4DE38C32B10FBBB0013B594 /* Preview Content */,
 			);
@@ -262,6 +265,7 @@
 				F4F8B95D2B13C0E5006F1C9A /* ResortView.swift in Sources */,
 				F4DE38BE2B10FBB80013B594 /* weatherAlteriPhoneClientApp.swift in Sources */,
 				F4FE91822D66DD3C0096E7DC /* FindAFriend.swift in Sources */,
+				F4D10B5D2D6BB760004B7F4B /* CardView.swift in Sources */,
 				F4F8B95B2B13C0CB006F1C9A /* BackCountryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
