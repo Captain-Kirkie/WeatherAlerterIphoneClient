@@ -72,19 +72,23 @@ struct NavigationCard: View, CardView {
                 .frame(height: 100)
                 .background(Color.black.opacity(0.5)) // Semi-transparent background for
         }
-//        .frame(width: UIScreen.main.bounds.width - 10, height: UIScreen.main.bounds.height / 3)
         .shadow(radius: 10)
         .padding()
+        .cornerRadius(50)
     }
 }
 
-
-
-
-
-
-
 #Preview {
-    // Breckinridge CO lat and long
-    LocationView(image: "twins", title: "Breckenridge, CO", location: CLLocation(latitude: 39.4817, longitude: -106.0384))
+    NavigationCard(image: "Andrew", title: "Find a friend to shred", description: "Looking for partners? This is the spot!")
 }
+
+
+
+
+
+
+//
+//#Preview {
+//    // Breckinridge CO lat and long
+//    LocationView(image: "twins", title: "Breckenridge, CO", location: CLLocation(latitude: 39.4817, longitude: -106.0384))
+//}
