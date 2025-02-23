@@ -24,29 +24,7 @@ struct LocationView: View {
     var body: some View {
         VStack {
             Image(image).resizable()
-            VStack { 
-                HStack {
-                    // This is the name of the location
-                    Text(title).padding().fontWeight(.bold).font(Font.title2)
-                    Spacer()
-                    VStack {
-                        HStack {
-                            Text("Latitude: \(self.location.coordinate.latitude)")
-                            Spacer()
-                            
-                        }
-                        HStack {
-                            Text("Longitude: \(self.location.coordinate.longitude)")
-                            Spacer()
-                        }
-                    }.frame(maxWidth: 200)
-                    
-                    
-                }
-                HStack { // this is the description
-                    Text("This is description")
-                }
-            }
+            CordinatesView( title: self.title, location: self.location)
         }
         .frame(width: UIScreen.main.bounds.width - 10, height: UIScreen.main.bounds.height / 3)
         .clipShape(RoundedRectangle(cornerRadius: 55))
@@ -55,6 +33,34 @@ struct LocationView: View {
     }
 }
 
+
+struct CordinatesView: View {
+    var title: String
+    var location: CLLocation
+    var body: some View {
+        VStack {
+            HStack {
+                // This is the name of the location
+                Text(title).padding().fontWeight(.bold).font(Font.title2)
+                Spacer()
+                VStack {
+                    HStack {
+                        Text("Latitude: \(self.location.coordinate.latitude)")
+                        Spacer()
+                    }
+                    HStack {
+                        Text("Longitude: \(self.location.coordinate.longitude)")
+                        Spacer()
+                    }
+                }.frame(maxWidth: 200)
+            }
+            HStack { // this is the description
+                Text("This is description")
+            }
+        }.background(Color.gray.opacity(0.5))
+            .cornerRadius(20)
+    }
+}
 
 struct NavigationCard: View, CardView {
     var image: String
@@ -78,17 +84,16 @@ struct NavigationCard: View, CardView {
     }
 }
 
+//#Preview {
+//    NavigationCard(image: "Andrew", title: "Find a friend to shred", description: "Looking for partners? This is the spot!")
+//}
+
+
 #Preview {
-    NavigationCard(image: "Andrew", title: "Find a friend to shred", description: "Looking for partners? This is the spot!")
+    // Breckinridge CO lat and long
+    //    LocationView(image: "twins", title: "Breckenridge, CO", location: CLLocation(latitude: 39.4817, longitude: -106.0384))
+    //
+    CordinatesView(title: "Breckenridge, CO", location: CLLocation(latitude: 39.4817, longitude: -106.0384))
 }
 
 
-
-
-
-
-//
-//#Preview {
-//    // Breckinridge CO lat and long
-//    LocationView(image: "twins", title: "Breckenridge, CO", location: CLLocation(latitude: 39.4817, longitude: -106.0384))
-//}

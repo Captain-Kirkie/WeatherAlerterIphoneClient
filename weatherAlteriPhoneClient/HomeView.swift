@@ -20,7 +20,7 @@ struct HomeView: View {
             TextField(
                     "Find your Mountain",
                     text: $mountainString
-                )
+            ).background(Color.white)
 //                .focused($emailFieldIsFocused)
                 .onSubmit {
 //                    validate(name: username)
@@ -29,10 +29,9 @@ struct HomeView: View {
                 .textInputAutocapitalization(.never)
                 .disableAutocorrection(true)
                 .border(.secondary)
-        }
-        
-        
-        
+        }.frame(height: 100)
+            .background(Color.black.opacity(0.5))
+        // scroller view to decide what to do
         ScrollView {
             VStack(alignment: .leading) {
                 NavigationLink(destination: WeatherView()) {
@@ -66,4 +65,15 @@ struct HomeView: View {
             }
         }
     }
+}
+
+
+struct CurrentLocation: View {
+    var body: some View {
+        LocationView(image: "twins", title: "Breckenridge, CO", location: CLLocation(latitude: 39.4817, longitude: -106.0384))
+    }
+}
+
+#Preview {
+    HomeView(currentLocation: nil, mountainString: "hello world")
 }
