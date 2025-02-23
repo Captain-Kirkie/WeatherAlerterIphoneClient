@@ -37,6 +37,8 @@ struct LocationView: View {
 struct CordinatesView: View {
     var title: String
     var location: CLLocation
+    var description: String?
+    
     var body: some View {
         VStack {
             HStack {
@@ -55,7 +57,7 @@ struct CordinatesView: View {
                 }.frame(maxWidth: 200)
             }
             HStack { // this is the description
-                Text("This is description")
+                Text(description ?? "No description available.")
             }
         }.background(Color.gray.opacity(0.5))
             .cornerRadius(20)
@@ -91,9 +93,9 @@ struct NavigationCard: View, CardView {
 
 #Preview {
     // Breckinridge CO lat and long
-    //    LocationView(image: "twins", title: "Breckenridge, CO", location: CLLocation(latitude: 39.4817, longitude: -106.0384))
-    //
-    CordinatesView(title: "Breckenridge, CO", location: CLLocation(latitude: 39.4817, longitude: -106.0384))
+        LocationView(image: "twins", title: "Breckenridge, CO", location: CLLocation(latitude: 39.4817, longitude: -106.0384))
+    
+//    CordinatesView(title: "Breckenridge, CO", location: CLLocation(latitude: 39.4817, longitude: -106.0384))
 }
 
 

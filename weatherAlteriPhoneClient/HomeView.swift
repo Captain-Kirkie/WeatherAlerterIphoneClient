@@ -29,8 +29,10 @@ struct HomeView: View {
                 .textInputAutocapitalization(.never)
                 .disableAutocorrection(true)
                 .border(.secondary)
+            
+            CordinatesView(title: "Breckenridge, CO", location: CLLocation(latitude: 39.4817, longitude: -106.0384))
         }.frame(height: 100)
-            .background(Color.black.opacity(0.5))
+//            .background(Color.black.opacity(0.5))
         // scroller view to decide what to do
         ScrollView {
             VStack(alignment: .leading) {
