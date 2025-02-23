@@ -31,28 +31,29 @@ struct HomeView: View {
                 .border(.secondary)
             
             CordinatesView(title: "Breckenridge, CO", location: CLLocation(latitude: 39.4817, longitude: -106.0384))
+                .padding()
         }.frame(height: 100)
 //            .background(Color.black.opacity(0.5))
         // scroller view to decide what to do
         ScrollView {
             VStack(alignment: .leading) {
                 NavigationLink(destination: WeatherView()) {
-                    NavigationCard(image: "twins", title: "Weather", description: "Find weather forcast for your area")
+                    NavigationCard(image: "twins", title: "Weather", description: "Find weather forcast for your area!")
                 }
                 NavigationLink(destination: ResortView()) {
-                    NavigationCard(image: "mineral-basin", title: "Resort", description: "Get Resort info for your area")
+                    NavigationCard(image: "mineral-basin", title: "Resort", description: "Get Resort info for your area!")
                 }
                 NavigationLink(destination: TrafficView()) {
-                    NavigationCard(image: "traffic", title: "Traffic", description: "Get Traffic Report")
+                    NavigationCard(image: "traffic", title: "Traffic", description: "Get Traffic Report!")
                 }
                 NavigationLink(destination: BackCountryView()) {
-                    NavigationCard(image: "backcountry", title: "Back Country", description: "Get Back Country forcast for your area")
+                    NavigationCard(image: "backcountry", title: "Back Country", description: "Get Back Country forcast for your area!")
                 }
                 NavigationLink(destination: FindAFriend()) {
                     NavigationCard(image: "Andrew", title: "Find a friend to shred", description: "Looking for partners? This is the spot!")
                 }
                 NavigationLink(destination: FindARide()) {
-                    NavigationCard(image: "newTruck", title: "Carpool", description: "Find fellow shredders to carpool with")
+                    NavigationCard(image: "newTruck", title: "Carpool", description: "Find fellow shredders to carpool with!")
                 }
                 // TODO: Add lodging
                 
