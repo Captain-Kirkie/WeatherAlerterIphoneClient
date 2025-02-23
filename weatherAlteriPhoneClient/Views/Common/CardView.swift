@@ -64,7 +64,7 @@ struct CordinatesView: View {
     }
 }
 
-struct NavigationCard: View, CardView {
+struct NavigationCardView: View, CardView {
     var image: String
     var title: String
     var description: String
@@ -99,7 +99,7 @@ struct NavigationCard: View, CardView {
     // Breckinridge CO lat and long
 //        LocationView(image: "twins", title: "Breckenridge, CO", location: CLLocation(latitude: 39.4817, longitude: -106.0384))
     
-    NavigationCard(image: "twins", title: "Weather", description: "Find weather forcast for your area!")
+    NavigationCardView(image: "twins", title: "Weather", description: "Find weather forcast for your area!")
     
 //    CordinatesView(title: "Breckenridge, CO", location: CLLocation(latitude: 39.4817, longitude: -106.0384))
 }

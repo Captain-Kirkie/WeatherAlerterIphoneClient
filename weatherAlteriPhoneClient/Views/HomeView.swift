@@ -11,19 +11,19 @@ import CoreLocation
 
 struct HomeView: View {
     @State var currentLocation: CLLocation?
-//    @FocusState private var emailFieldIsFocused: Bool = false
+    //    @FocusState private var emailFieldIsFocused: Bool = false
     @State var mountainString: String = ""
     
     var body: some View {
         // Current location indicator
         VStack {
             TextField(
-                    "Find your Mountain",
-                    text: $mountainString
+                "Find your Mountain",
+                text: $mountainString
             ).background(Color.white)
-//                .focused($emailFieldIsFocused)
+            //                .focused($emailFieldIsFocused)
                 .onSubmit {
-//                    validate(name: username)
+                    //                    validate(name: username)
                     print("hello world \($mountainString)")
                 }
                 .textInputAutocapitalization(.never)
@@ -37,25 +37,26 @@ struct HomeView: View {
         
         // scroller view to decide what to do
         ScrollView {
-            VStack(alignment: .leading) {
+            NavigationLink(destination: FindARideView()) {
+                NavigationCardView(image: "newTruck", title: "Carpool", description: "Find fellow shredders to carpool with!")
+            }
+            VStack{
+                NavigationLink(destination: FindAFriendView()) {
+                    NavigationCardView(image: "Andrew", title: "Find a friend to shred", description: "Looking for partners? This is the spot!")
+                }
                 NavigationLink(destination: WeatherView()) {
-                    NavigationCard(image: "twins", title: "Weather", description: "Find weather forcast for your area!")
+                    NavigationCardView(image: "twins", title: "Weather", description: "Find weather forcast for your area!")
                 }
                 NavigationLink(destination: ResortView()) {
-                    NavigationCard(image: "mineral-basin", title: "Resort", description: "Get Resort info for your area!")
+                    NavigationCardView(image: "mineral-basin", title: "Resort", description: "Get Resort info for your area!")
                 }
                 NavigationLink(destination: TrafficView()) {
-                    NavigationCard(image: "traffic", title: "Traffic", description: "Get Traffic Report!")
+                    NavigationCardView(image: "traffic", title: "Traffic", description: "Get Traffic Report!")
                 }
                 NavigationLink(destination: BackCountryView()) {
-                    NavigationCard(image: "backcountry", title: "Back Country", description: "Get Back Country forcast for your area!")
+                    NavigationCardView(image: "backcountry", title: "Back Country", description: "Get Back Country forcast for your area!")
                 }
-                NavigationLink(destination: FindAFriend()) {
-                    NavigationCard(image: "Andrew", title: "Find a friend to shred", description: "Looking for partners? This is the spot!")
-                }
-                NavigationLink(destination: FindARide()) {
-                    NavigationCard(image: "newTruck", title: "Carpool", description: "Find fellow shredders to carpool with!")
-                }
+                
                 // TODO: Add lodging
                 
             }.toolbar {

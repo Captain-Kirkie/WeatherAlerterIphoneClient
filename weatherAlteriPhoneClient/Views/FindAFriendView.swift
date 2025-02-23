@@ -1,5 +1,5 @@
 //
-//  FindARide.swift
+//  FindAFriend.swift
 //  weatherAlteriPhoneClient
 //
 //  Created by Kirk Hietpas on 2/19/25.
@@ -9,12 +9,12 @@ import Foundation
 
 import SwiftUI
 
-struct FindARide: View {
+struct FindAFriendView: View {
     var body: some View {
-        Text("Find a ride to shred")
+        Text("Help me find a friend")
     }
 }
 
 #Preview {
-    FindARide()
+    ResortView()
 }
